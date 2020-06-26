@@ -20,14 +20,14 @@ import kr.ac.hansung.cse.model.Product;
 import kr.ac.hansung.cse.repo.ProductRepository;
 
 @RestController
-@RequestMapping("/api/vi")
+@RequestMapping("/api/v1")
 public class ProductController {
 	
 	@Autowired
 	ProductRepository repository;
 	
 	// create new product
-	@PostMapping(value="products")
+	@PostMapping(value="/products")
 	public ResponseEntity<Product> postProduct(@RequestBody Product product) {
 		try {
 			Product _product = repository.save(new Product(product));

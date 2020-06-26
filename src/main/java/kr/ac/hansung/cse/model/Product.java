@@ -23,41 +23,41 @@ import lombok.Setter;
 @RequiredArgsConstructor
 
 @Entity
-@Table(name="productTable")
+@Table(name = "productTable")
 public class Product implements Serializable {
 
 	/**
 	 * send to client side in JSON format
 	 **/
 	private static final long serialVersionUID = -8613449854766783122L;
-		
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "productId")
 	private int id;
-	
+
 	@NonNull
-    private String name;
-    
+	private String name;
+
 	@NonNull
-    private String category;
-    
-    private int price;
-    
+	private String category;
+
+	private int price;
+
 	@NonNull
-    private String manufacturer;
-    
-    private int unitInStock;
-    
-    private String description;
-    
-    public Product(Product product) {
-    	this.name = product.name;
-    	this.category = product.category;
-    	this.price = product.price;
-    	this.manufacturer = product.manufacturer;
-    	this.unitInStock = product.unitInStock;
-    	this.description = product.description;
-    }
+	private String manufacturer;
+
+	private int unitInStock;
+
+	private String description;
+
+	public Product(Product product) {
+		this.name = product.name;
+		this.category = product.category;
+		this.price = product.price;
+		this.manufacturer = product.manufacturer;
+		this.unitInStock = product.unitInStock;
+		this.description = product.description;
+	}
 
 }
